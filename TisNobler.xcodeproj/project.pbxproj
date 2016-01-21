@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D008F0C01B1E8A9E0045F0CB /* NWSWeatherStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D008F0BF1B1E8A9E0045F0CB /* NWSWeatherStation.m */; };
+		D008F0C31B1FBCD20045F0CB /* SensorTagWeatherStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D008F0C21B1FBCD20045F0CB /* SensorTagWeatherStation.m */; };
+		D008F0CD1B2648D70045F0CB /* WeatherStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D008F0CC1B2648D70045F0CB /* WeatherStationViewController.m */; };
+		D01057F41B2F8980001F004A /* WxStationSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01057F31B2F8980001F004A /* WxStationSetupViewController.m */; };
+		D01058001B34A306001F004A /* WxStationSetupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D01057FF1B34A306001F004A /* WxStationSetupTableViewCell.m */; };
+		D01534891C2BB2220010F6C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01534881C2BB2220010F6C8 /* MapKit.framework */; };
+		D01F5F181C239E5E00D19D78 /* test.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D01F5F171C239E5E00D19D78 /* test.gpx */; settings = {ASSET_TAGS = (); }; };
+		D05870771BB3613000065EEE /* TISensorTagDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05870711BB3608F00065EEE /* TISensorTagDevice.framework */; };
+		D06721EC1C502AD70098862A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D06721EB1C502AD70098862A /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		D09994351BCED11C00182657 /* TISensorTagDevice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D05870711BB3608F00065EEE /* TISensorTagDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0BAD7C11B4B3A14005A742C /* UIHeightAdjustLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD7C01B4B3A14005A742C /* UIHeightAdjustLabel.m */; };
+		D0CCBABB1B1924A2007F1ADF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBABA1B1924A2007F1ADF /* main.m */; };
+		D0CCBABE1B1924A2007F1ADF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBABD1B1924A2007F1ADF /* AppDelegate.m */; };
+		D0CCBAC11B1924A2007F1ADF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBAC01B1924A2007F1ADF /* RootViewController.m */; };
+		D0CCBAC71B1924A2007F1ADF /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBAC61B1924A2007F1ADF /* ModelController.m */; };
+		D0CCBACA1B1924A2007F1ADF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CCBAC81B1924A2007F1ADF /* Main.storyboard */; };
+		D0CCBACC1B1924A2007F1ADF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CCBACB1B1924A2007F1ADF /* Images.xcassets */; };
+		D0CCBACF1B1924A2007F1ADF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCBACD1B1924A2007F1ADF /* LaunchScreen.xib */; };
+		D0CCBADB1B1924A2007F1ADF /* TisNoblerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBADA1B1924A2007F1ADF /* TisNoblerTests.m */; };
+		D0CCBAE71B193E6D007F1ADF /* WeatherStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CCBAE61B193E6D007F1ADF /* WeatherStation.m */; };
+		D0CCBAE91B193F74007F1ADF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CCBAE81B193F74007F1ADF /* CoreLocation.framework */; };
+		D0F329BE1C359E68004042C0 /* UIViewSpeechBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F329BD1C359E68004042C0 /* UIViewSpeechBubble.m */; settings = {ASSET_TAGS = (); }; };
+		D0F6925F1C2B42070032EFED /* WxStationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F6925E1C2B42070032EFED /* WxStationInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D05870701BB3608F00065EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D058702A1BB31A8700065EEE;
+			remoteInfo = TISensorTagDevice;
+		};
+		D05870721BB3608F00065EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D05870341BB31A8700065EEE;
+			remoteInfo = TISensorTagDeviceTests;
+		};
+		D09994361BCED11C00182657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D05870291BB31A8700065EEE;
+			remoteInfo = TISensorTagDevice;
+		};
+		D0CCBAD51B1924A2007F1ADF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0CCBAAD1B1924A2007F1ADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0CCBAB41B1924A2007F1ADF;
+			remoteInfo = TisNobler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D09994381BCED11D00182657 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D09994351BCED11C00182657 /* TISensorTagDevice.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D008F0BE1B1E8A9E0045F0CB /* NWSWeatherStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWSWeatherStation.h; sourceTree = SOURCE_ROOT; };
+		D008F0BF1B1E8A9E0045F0CB /* NWSWeatherStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NWSWeatherStation.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D008F0C11B1FBCD20045F0CB /* SensorTagWeatherStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorTagWeatherStation.h; sourceTree = SOURCE_ROOT; };
+		D008F0C21B1FBCD20045F0CB /* SensorTagWeatherStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorTagWeatherStation.m; sourceTree = SOURCE_ROOT; };
+		D008F0CB1B2648D70045F0CB /* WeatherStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherStationViewController.h; sourceTree = "<group>"; };
+		D008F0CC1B2648D70045F0CB /* WeatherStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = WeatherStationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D01057F21B2F8980001F004A /* WxStationSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WxStationSetupViewController.h; sourceTree = "<group>"; };
+		D01057F31B2F8980001F004A /* WxStationSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WxStationSetupViewController.m; sourceTree = "<group>"; };
+		D01057FE1B34A306001F004A /* WxStationSetupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WxStationSetupTableViewCell.h; sourceTree = "<group>"; };
+		D01057FF1B34A306001F004A /* WxStationSetupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WxStationSetupTableViewCell.m; sourceTree = "<group>"; };
+		D01534881C2BB2220010F6C8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D01F5F171C239E5E00D19D78 /* test.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.gpx; path = ../Documents/test.gpx; sourceTree = "<group>"; };
+		D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TISensorTagDevice.xcodeproj; path = ../TISensorTag/TISensorTagDevice.xcodeproj; sourceTree = "<group>"; };
+		D06721EB1C502AD70098862A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D0BAD7BF1B4B3A14005A742C /* UIHeightAdjustLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHeightAdjustLabel.h; sourceTree = "<group>"; };
+		D0BAD7C01B4B3A14005A742C /* UIHeightAdjustLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHeightAdjustLabel.m; sourceTree = "<group>"; };
+		D0CCBAB51B1924A2007F1ADF /* TISNobler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TISNobler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0CCBAB91B1924A2007F1ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CCBABA1B1924A2007F1ADF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0CCBABC1B1924A2007F1ADF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0CCBABD1B1924A2007F1ADF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0CCBABF1B1924A2007F1ADF /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D0CCBAC01B1924A2007F1ADF /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		D0CCBAC51B1924A2007F1ADF /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		D0CCBAC61B1924A2007F1ADF /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		D0CCBAC91B1924A2007F1ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0CCBACB1B1924A2007F1ADF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0CCBACE1B1924A2007F1ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D0CCBAD41B1924A2007F1ADF /* TisNoblerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TisNoblerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0CCBAD91B1924A2007F1ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CCBADA1B1924A2007F1ADF /* TisNoblerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TisNoblerTests.m; sourceTree = "<group>"; };
+		D0CCBAE51B193E6D007F1ADF /* WeatherStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherStation.h; sourceTree = SOURCE_ROOT; };
+		D0CCBAE61B193E6D007F1ADF /* WeatherStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherStation.m; sourceTree = SOURCE_ROOT; };
+		D0CCBAE81B193F74007F1ADF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D0F329BC1C359E68004042C0 /* UIViewSpeechBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewSpeechBubble.h; sourceTree = "<group>"; };
+		D0F329BD1C359E68004042C0 /* UIViewSpeechBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewSpeechBubble.m; sourceTree = "<group>"; };
+		D0F6925D1C2B42070032EFED /* WxStationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WxStationInfoViewController.h; sourceTree = "<group>"; };
+		D0F6925E1C2B42070032EFED /* WxStationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WxStationInfoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0CCBAB21B1924A2007F1ADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01534891C2BB2220010F6C8 /* MapKit.framework in Frameworks */,
+				D05870771BB3613000065EEE /* TISensorTagDevice.framework in Frameworks */,
+				D0CCBAE91B193F74007F1ADF /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CCBAD11B1924A2007F1ADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D058706C1BB3608F00065EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D05870711BB3608F00065EEE /* TISensorTagDevice.framework */,
+				D05870731BB3608F00065EEE /* TISensorTagDeviceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0CCBAAC1B1924A2007F1ADF = {
+			isa = PBXGroup;
+			children = (
+				D01534881C2BB2220010F6C8 /* MapKit.framework */,
+				D01F5F171C239E5E00D19D78 /* test.gpx */,
+				D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */,
+				D0CCBAB71B1924A2007F1ADF /* TisNobler */,
+				D0CCBAD71B1924A2007F1ADF /* TisNoblerTests */,
+				D0CCBAB61B1924A2007F1ADF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0CCBAB61B1924A2007F1ADF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCBAB51B1924A2007F1ADF /* TISNobler.app */,
+				D0CCBAD41B1924A2007F1ADF /* TisNoblerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0CCBAB71B1924A2007F1ADF /* TisNobler */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCBABC1B1924A2007F1ADF /* AppDelegate.h */,
+				D0CCBABD1B1924A2007F1ADF /* AppDelegate.m */,
+				D0CCBABF1B1924A2007F1ADF /* RootViewController.h */,
+				D0CCBAC01B1924A2007F1ADF /* RootViewController.m */,
+				D01057FE1B34A306001F004A /* WxStationSetupTableViewCell.h */,
+				D01057FF1B34A306001F004A /* WxStationSetupTableViewCell.m */,
+				D01057F21B2F8980001F004A /* WxStationSetupViewController.h */,
+				D01057F31B2F8980001F004A /* WxStationSetupViewController.m */,
+				D008F0CB1B2648D70045F0CB /* WeatherStationViewController.h */,
+				D008F0CC1B2648D70045F0CB /* WeatherStationViewController.m */,
+				D0F6925D1C2B42070032EFED /* WxStationInfoViewController.h */,
+				D0F6925E1C2B42070032EFED /* WxStationInfoViewController.m */,
+				D0CCBAC51B1924A2007F1ADF /* ModelController.h */,
+				D0CCBAC61B1924A2007F1ADF /* ModelController.m */,
+				D0CCBAE51B193E6D007F1ADF /* WeatherStation.h */,
+				D0CCBAE61B193E6D007F1ADF /* WeatherStation.m */,
+				D008F0C11B1FBCD20045F0CB /* SensorTagWeatherStation.h */,
+				D008F0C21B1FBCD20045F0CB /* SensorTagWeatherStation.m */,
+				D008F0BE1B1E8A9E0045F0CB /* NWSWeatherStation.h */,
+				D008F0BF1B1E8A9E0045F0CB /* NWSWeatherStation.m */,
+				D0BAD7BF1B4B3A14005A742C /* UIHeightAdjustLabel.h */,
+				D0BAD7C01B4B3A14005A742C /* UIHeightAdjustLabel.m */,
+				D0F329BC1C359E68004042C0 /* UIViewSpeechBubble.h */,
+				D0F329BD1C359E68004042C0 /* UIViewSpeechBubble.m */,
+				D0CCBAC81B1924A2007F1ADF /* Main.storyboard */,
+				D0CCBACB1B1924A2007F1ADF /* Images.xcassets */,
+				D0CCBACD1B1924A2007F1ADF /* LaunchScreen.xib */,
+				D0CCBAE81B193F74007F1ADF /* CoreLocation.framework */,
+				D0CCBAB81B1924A2007F1ADF /* Supporting Files */,
+			);
+			path = TisNobler;
+			sourceTree = "<group>";
+		};
+		D0CCBAB81B1924A2007F1ADF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D06721EB1C502AD70098862A /* Settings.bundle */,
+				D0CCBAB91B1924A2007F1ADF /* Info.plist */,
+				D0CCBABA1B1924A2007F1ADF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0CCBAD71B1924A2007F1ADF /* TisNoblerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCBADA1B1924A2007F1ADF /* TisNoblerTests.m */,
+				D0CCBAD81B1924A2007F1ADF /* Supporting Files */,
+			);
+			path = TisNoblerTests;
+			sourceTree = "<group>";
+		};
+		D0CCBAD81B1924A2007F1ADF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCBAD91B1924A2007F1ADF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0CCBAB41B1924A2007F1ADF /* TISNobler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0CCBADE1B1924A2007F1ADF /* Build configuration list for PBXNativeTarget "TISNobler" */;
+			buildPhases = (
+				D0CCBAB11B1924A2007F1ADF /* Sources */,
+				D0CCBAB21B1924A2007F1ADF /* Frameworks */,
+				D0CCBAB31B1924A2007F1ADF /* Resources */,
+				D09994381BCED11D00182657 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D09994371BCED11C00182657 /* PBXTargetDependency */,
+			);
+			name = TISNobler;
+			productName = TisNobler;
+			productReference = D0CCBAB51B1924A2007F1ADF /* TISNobler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0CCBAD31B1924A2007F1ADF /* TisNoblerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0CCBAE11B1924A2007F1ADF /* Build configuration list for PBXNativeTarget "TisNoblerTests" */;
+			buildPhases = (
+				D0CCBAD01B1924A2007F1ADF /* Sources */,
+				D0CCBAD11B1924A2007F1ADF /* Frameworks */,
+				D0CCBAD21B1924A2007F1ADF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0CCBAD61B1924A2007F1ADF /* PBXTargetDependency */,
+			);
+			name = TisNoblerTests;
+			productName = TisNoblerTests;
+			productReference = D0CCBAD41B1924A2007F1ADF /* TisNoblerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0CCBAAD1B1924A2007F1ADF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Peter Merchant";
+				TargetAttributes = {
+					D0CCBAB41B1924A2007F1ADF = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					D0CCBAD31B1924A2007F1ADF = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = D0CCBAB41B1924A2007F1ADF;
+					};
+				};
+			};
+			buildConfigurationList = D0CCBAB01B1924A2007F1ADF /* Build configuration list for PBXProject "TisNobler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0CCBAAC1B1924A2007F1ADF;
+			productRefGroup = D0CCBAB61B1924A2007F1ADF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D058706C1BB3608F00065EEE /* Products */;
+					ProjectRef = D058706B1BB3608F00065EEE /* TISensorTagDevice.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D0CCBAB41B1924A2007F1ADF /* TISNobler */,
+				D0CCBAD31B1924A2007F1ADF /* TisNoblerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D05870711BB3608F00065EEE /* TISensorTagDevice.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TISensorTagDevice.framework;
+			remoteRef = D05870701BB3608F00065EEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D05870731BB3608F00065EEE /* TISensorTagDeviceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TISensorTagDeviceTests.xctest;
+			remoteRef = D05870721BB3608F00065EEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0CCBAB31B1924A2007F1ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0CCBACA1B1924A2007F1ADF /* Main.storyboard in Resources */,
+				D01F5F181C239E5E00D19D78 /* test.gpx in Resources */,
+				D06721EC1C502AD70098862A /* Settings.bundle in Resources */,
+				D0CCBACF1B1924A2007F1ADF /* LaunchScreen.xib in Resources */,
+				D0CCBACC1B1924A2007F1ADF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CCBAD21B1924A2007F1ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0CCBAB11B1924A2007F1ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01057F41B2F8980001F004A /* WxStationSetupViewController.m in Sources */,
+				D0CCBAE71B193E6D007F1ADF /* WeatherStation.m in Sources */,
+				D01058001B34A306001F004A /* WxStationSetupTableViewCell.m in Sources */,
+				D0BAD7C11B4B3A14005A742C /* UIHeightAdjustLabel.m in Sources */,
+				D0CCBABE1B1924A2007F1ADF /* AppDelegate.m in Sources */,
+				D008F0CD1B2648D70045F0CB /* WeatherStationViewController.m in Sources */,
+				D0F329BE1C359E68004042C0 /* UIViewSpeechBubble.m in Sources */,
+				D0CCBAC71B1924A2007F1ADF /* ModelController.m in Sources */,
+				D008F0C31B1FBCD20045F0CB /* SensorTagWeatherStation.m in Sources */,
+				D0F6925F1C2B42070032EFED /* WxStationInfoViewController.m in Sources */,
+				D0CCBABB1B1924A2007F1ADF /* main.m in Sources */,
+				D008F0C01B1E8A9E0045F0CB /* NWSWeatherStation.m in Sources */,
+				D0CCBAC11B1924A2007F1ADF /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0CCBAD01B1924A2007F1ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0CCBADB1B1924A2007F1ADF /* TisNoblerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D09994371BCED11C00182657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TISensorTagDevice;
+			targetProxy = D09994361BCED11C00182657 /* PBXContainerItemProxy */;
+		};
+		D0CCBAD61B1924A2007F1ADF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0CCBAB41B1924A2007F1ADF /* TISNobler */;
+			targetProxy = D0CCBAD51B1924A2007F1ADF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0CCBAC81B1924A2007F1ADF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0CCBAC91B1924A2007F1ADF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0CCBACD1B1924A2007F1ADF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0CCBACE1B1924A2007F1ADF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0CCBADC1B1924A2007F1ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0CCBADD1B1924A2007F1ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0CCBADF1B1924A2007F1ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TisNobler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.petermerchant.TISNobler;
+				PRODUCT_NAME = TISNobler;
+			};
+			name = Debug;
+		};
+		D0CCBAE01B1924A2007F1ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TisNobler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.petermerchant.TISNobler;
+				PRODUCT_NAME = TISNobler;
+			};
+			name = Release;
+		};
+		D0CCBAE21B1924A2007F1ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TisNoblerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TisNobler.app/TisNobler";
+			};
+			name = Debug;
+		};
+		D0CCBAE31B1924A2007F1ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TisNoblerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TisNobler.app/TisNobler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0CCBAB01B1924A2007F1ADF /* Build configuration list for PBXProject "TisNobler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CCBADC1B1924A2007F1ADF /* Debug */,
+				D0CCBADD1B1924A2007F1ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0CCBADE1B1924A2007F1ADF /* Build configuration list for PBXNativeTarget "TISNobler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CCBADF1B1924A2007F1ADF /* Debug */,
+				D0CCBAE01B1924A2007F1ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0CCBAE11B1924A2007F1ADF /* Build configuration list for PBXNativeTarget "TisNoblerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0CCBAE21B1924A2007F1ADF /* Debug */,
+				D0CCBAE31B1924A2007F1ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0CCBAAD1B1924A2007F1ADF /* Project object */;
+}
