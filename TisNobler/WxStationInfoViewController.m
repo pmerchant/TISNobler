@@ -12,6 +12,8 @@
 
 @implementation WxStationInfoViewController
 
+static bool	sZoomStarted = NO;
+
 - (void) viewDidLoad
 {
 	[super viewDidLoad];
@@ -20,7 +22,7 @@
 	{
 		stationMapView.delegate = self;
 		[stationMapView addAnnotation: self];
-	
+
 		[stationMapView.userLocation addObserver: self forKeyPath: @"location" options: NSKeyValueObservingOptionNew context: NULL];
 		NSString*	titleFormatString = [navBarTitle.title copy];
 		navBarTitle.title = [NSString stringWithFormat: titleFormatString, self.wxStation.locationDescription];
@@ -48,14 +50,11 @@
 	{
 		[stationMapView.userLocation removeObserver: self forKeyPath: @"location"];
 		
-		CLLocationCoordinate2D stationCoordinate = ((NWSWeatherStation*) self.wxStation).location.coordinate;
+		CLLocationCoordinate2D	stationCoordinate = ((NWSWeatherStation*) self.wxStation).location.coordinate;
+		CLLocation*				myLocation = change[NSKeyValueChangeNewKey];
+		MKCoordinateSpan		span = MKCoordinateSpanMake(fabs(stationCoordinate.latitude - myLocation.coordinate.latitude) * 2.15, fabs(stationCoordinate.longitude - myLocation.coordinate.longitude) * 2.15);
 		
-		CLLocation*	myLocation = change[NSKeyValueChangeNewKey];
-		
-		//		CLLocationCoordinate2D myLocation = mapView.userLocation.location.coordinate;
-		
-		MKCoordinateSpan span = MKCoordinateSpanMake(fabs(stationCoordinate.latitude - myLocation.coordinate.latitude) * 2.15, fabs(stationCoordinate.longitude - myLocation.coordinate.longitude) * 2.15);
-		
+		sZoomStarted = YES;
 		[stationMapView setRegion: [stationMapView regionThatFits: MKCoordinateRegionMake(stationCoordinate, span)] animated: YES];
 	}
 }
@@ -78,6 +77,15 @@
 }
 
 #pragma mark - MKMapViewDelegate protocol methods
+
+- (void) mapView: (MKMapView*) mapView regionDidChangeAnimated: (BOOL) animated
+{
+	if (sZoomStarted)
+	{
+		sZoomStarted = NO;
+		[mapView selectAnnotation: self animated: YES];
+	}
+}
 
 - (MKAnnotationView*) mapView: (MKMapView*) mapView viewForAnnotation: (id<MKAnnotation>) annotation
 {
@@ -118,7 +126,7 @@
 		annotationInfoView.triangleVertexOffset = (view.frame.origin.x + (view.bounds.size.width / 4)) - 10;
 		annotationInfoView.alpha = 0.0;
 		
-		annotationInfoStationName.text = ((NWSWeatherStation*)self.wxStation).locationDescription;
+		annotationInfoStationName.text = ((NWSWeatherStation*)self.wxStation).stationName;
 		annotationInfoStationNetwork.text = ((NWSWeatherStation*)self.wxStation).networkName;
 		annotationInfoStationDistance.text = [NSString stringWithFormat: @"%.1f %@", distance, distanceUnits];
 		[annotationInfoStationName sizeToFit];

@@ -1,16 +1,16 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7583370E30F76457F5041792A7ABAE15F5B13685",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A929A08547782DE190B00EB9614DE49DFB694056",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "57408E740E812F1942C6EF1388ECE8CC9CF511CC" : 0,
-    "7583370E30F76457F5041792A7ABAE15F5B13685" : 0
+    "A929A08547782DE190B00EB9614DE49DFB694056" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "88774D9F-3C69-4875-9331-83A852D8908E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "57408E740E812F1942C6EF1388ECE8CC9CF511CC" : "TISensorTag\/",
-    "7583370E30F76457F5041792A7ABAE15F5B13685" : "TisNobler\/"
+    "A929A08547782DE190B00EB9614DE49DFB694056" : "TisNobler\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TisNobler",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +20,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pmerchant\/TISensorTag.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "57408E740E812F1942C6EF1388ECE8CC9CF511CC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pmerchant\/TisNobler.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A929A08547782DE190B00EB9614DE49DFB694056"
     }
   ]
 }

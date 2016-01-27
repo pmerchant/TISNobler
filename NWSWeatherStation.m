@@ -15,6 +15,7 @@
 @implementation NWSWeatherStation
 
 @synthesize location;
+@synthesize stationName = _stationName;
 @synthesize networkName;
 
 #define kONE_HOUR_IN_SEC	3600
@@ -121,7 +122,7 @@ static NSCache*	sNetworkCache = NULL;
 	
 	if (_mesoToken == NULL)
 	{
-		self.error = [NSError errorWithDomain: @"MESOWEST" code: -2 userInfo: @{ NSLocalizedDescriptionKey : @"You must specify a MesoWest API token in the settings.  For more information on API keys, visit http://www.mesowest.org." }];
+		self.error = [NSError errorWithDomain: @"MESOWEST" code: -2 userInfo: @{ NSLocalizedDescriptionKey : @"You must specify a MesoWest API token in the settings.  For more information on API keys and tokens, visit http://www.mesowest.org." }];
 		return;
 	}
 	
@@ -223,42 +224,13 @@ static NSCache*	sNetworkCache = NULL;
 		
 		if (temperatureStation)
 		{
-			BOOL	downloadNetworkInfo = NO;
+			NSString*	latString = [temperatureStation objectForKey: @"LATITUDE"];
+			NSString*	lonString = [temperatureStation objectForKey: @"LONGITUDE"];
 			
-			if (sNetworkCache)
-			{
-				NSDictionary*	networkInfo = [sNetworkCache objectForKey: temperatureStation[@"MNET_ID"]];
-				
-				if (networkInfo)
-					_network = networkInfo[@"LONGNAME"];
-				else
-					downloadNetworkInfo = YES;
-			}
-			else
-			{
-				sNetworkCache = [[NSCache alloc] init];
-				downloadNetworkInfo = YES;
-			}
+			self.location = [[CLLocation alloc] initWithLatitude: [latString doubleValue] longitude: [lonString doubleValue]];
 			
-			if (downloadNetworkInfo)
-			{
-				NSURL*	wxNetAddress = [NSURL URLWithString: [NSString stringWithFormat: @"http://api.mesowest.net/v2/networks?id=%@&token=%@", temperatureStation[@"MNET_ID"], _mesoToken]];
-				
-				NSURLSessionDataTask* netDataTask = [[NSURLSession sharedSession] dataTaskWithURL: wxNetAddress completionHandler: ^(NSData* data, NSURLResponse* response, NSError* sessionError) {
-					if (sessionError == NULL)
-					{
-						NSDictionary*	jsonResponse = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingAllowFragments error: NULL];
-						NSArray*		networkList = jsonResponse[@"MNET"];
-						
-						if (networkList.count > 0)
-						{
-							[sNetworkCache setObject: networkList[0] forKey: temperatureStation[@"MNET_ID"]];
-							_network = [networkList[0] objectForKey: @"LONGNAME"];
-						}
-					}
-				}];
-				[netDataTask resume];
-			}
+			[self loadLocationDescription];
+			[self loadNetworkNameFromNetworkID: temperatureStation[@"MNET_ID"]];
 			
 			if (temperatureDict)
 			{
@@ -269,7 +241,7 @@ static NSCache*	sNetworkCache = NULL;
 				
 				self.temperature = [temp intValue];
 				
-				self.locationDescription = [temperatureStation objectForKey: @"NAME"];
+				_stationName = [temperatureStation objectForKey: @"NAME"];
 				
 				NSDateFormatter*	dateFormat = [[NSDateFormatter alloc] init];
 				
@@ -277,11 +249,6 @@ static NSCache*	sNetworkCache = NULL;
 				dateFormat.timeZone = [NSTimeZone timeZoneForSecondsFromGMT: 0];
 				
 				self.lastUpdateDate = [dateFormat dateFromString: [temperatureDict objectForKey: @"date_time"]];
-				
-				NSString*	latString = [temperatureStation objectForKey: @"LATITUDE"];
-				NSString*	lonString = [temperatureStation objectForKey: @"LONGITUDE"];
-				
-				self.location = [[CLLocation alloc] initWithLatitude: [latString doubleValue] longitude: [lonString doubleValue]];
 				
 				// Get Latency information to calculate when the best time to ask again is.
 				
@@ -382,7 +349,79 @@ static NSCache*	sNetworkCache = NULL;
 		[self resume];
 }
 
+- (void) loadNetworkNameFromNetworkID: (NSString*) networkID
+{
+	BOOL	downloadNetworkInfo = NO;
+	
+	if (sNetworkCache)
+	{
+		NSDictionary*	networkInfo = [sNetworkCache objectForKey: networkID];
+		
+		if (networkInfo)
+			_network = networkInfo[@"LONGNAME"];
+		else
+			downloadNetworkInfo = YES;
+	}
+	else
+	{
+		sNetworkCache = [[NSCache alloc] init];
+		downloadNetworkInfo = YES;
+	}
+	
+	if (downloadNetworkInfo)
+	{
+		NSURL*	wxNetAddress = [NSURL URLWithString: [NSString stringWithFormat: @"http://api.mesowest.net/v2/networks?id=%@&token=%@", networkID, _mesoToken]];
+		
+		NSURLSessionDataTask* netDataTask = [[NSURLSession sharedSession] dataTaskWithURL: wxNetAddress completionHandler: ^(NSData* data, NSURLResponse* response, NSError* sessionError) {
+			if (sessionError == NULL)
+			{
+				NSDictionary*	jsonResponse = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingAllowFragments error: NULL];
+				NSArray*		networkList = jsonResponse[@"MNET"];
+				
+				if (networkList.count > 0)
+				{
+					[sNetworkCache setObject: networkList[0] forKey: networkID];
+					_network = [networkList[0] objectForKey: @"LONGNAME"];
+				}
+			}
+		}];
+		[netDataTask resume];
+	}
+}
 
+- (void) loadLocationDescription
+{
+	// Go to nominatim and get the name of the city where the weather station is located.
+	
+	NSAssert(self.location != NULL, @"No location defined.");
+	
+	NSURL*	reverseGeocodeAddress = [NSURL URLWithString: [NSString stringWithFormat: @"http://nominatim.openstreetmap.org/reverse?format=json&addressdetails=1&lat=%.7f&lon=%.7f", self.location.coordinate.latitude, self.location.coordinate.longitude]];
+	
+	NSURLSessionDataTask* netDataTask = [[NSURLSession sharedSession] dataTaskWithURL: reverseGeocodeAddress
+																	completionHandler: ^(NSData* data, NSURLResponse* response, NSError* sessionError) {
+		if (sessionError == NULL)
+		{
+			NSDictionary*	jsonResponse = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingAllowFragments error: NULL];
+			NSDictionary*	addressInfo = jsonResponse[@"address"];
+			
+			if (addressInfo == NULL)	// No address info in response?
+				self.locationDescription = self.stationName;	// Use the station name
+			else if (addressInfo[@"village"])
+				self.locationDescription = addressInfo[@"village"];
+			else if (addressInfo[@"town"])
+				self.locationDescription = addressInfo[@"town"];
+			else if (addressInfo[@"suburb"])
+				self.locationDescription = addressInfo[@"suburb"];
+			else if (addressInfo[@"city"])
+				self.locationDescription = addressInfo[@"city"];
+			else
+				self.locationDescription = self.stationName;
+		}
+		else
+			self.locationDescription = self.stationName;
+	}];
+	[netDataTask resume];
+}
 #pragma mark - Location Manager Delegate Methods
 
 - (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray*) locations
